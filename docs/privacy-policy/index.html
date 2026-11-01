@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How the Delfin Discord Bot handles information when you use it.">
+    <meta name="color-scheme" content="light">
+    <title>Privacy Policy | Delfin Discord Bot</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #202b3c;
+        background: #fff;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        --muted: #647184;
+        --line: #e6eaf0;
+        --accent: #244b78;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: #fff;
+        line-height: 1.7;
+      }
+
+      .page {
+        width: min(100% - 40px, 820px);
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        color: #18263a;
+        font-size: 15px;
+        font-weight: 650;
+        letter-spacing: .01em;
+        text-decoration: none;
+      }
+
+      main { padding: 68px 0 76px; }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: #172338;
+        font-size: clamp(36px, 7vw, 48px);
+        letter-spacing: -.045em;
+        line-height: 1.15;
+      }
+
+      .updated {
+        margin: 17px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .intro {
+        margin: 35px 0 44px;
+        color: #435166;
+        font-size: 17px;
+      }
+
+      section {
+        padding: 25px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        color: #1c2b40;
+        font-size: 19px;
+        letter-spacing: -.015em;
+      }
+
+      section p { margin: 0; color: #465468; }
+      section p + p { margin-top: 12px; }
+      section ul { margin: 10px 0 0; padding-left: 22px; color: #465468; }
+      section li + li { margin-top: 6px; }
+
+      a { color: var(--accent); text-underline-offset: 3px; }
+      a:hover { color: #173552; }
+      a:focus-visible { outline: 3px solid #99b9dc; outline-offset: 3px; }
+
+      .related {
+        margin-top: 36px;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: #465468;
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 22px 0 30px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 600px) {
+        .page { width: min(100% - 32px, 820px); }
+        header { padding: 22px 0; }
+        main { padding: 48px 0 56px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="brand" href="../../">Delfin Discord Bot</a>
+      </header>
+
+      <main>
+        <p class="eyebrow">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Effective date: November 1, 2026</p>
+        <p class="intro">
+          This policy explains how the Delfin Discord Bot (the “Bot”) handles information when
+          you interact with it on Discord. It describes the Bot’s current behavior and does not
+          replace the privacy policies of Discord or other service providers.
+        </p>
+
+        <section>
+          <h2>1. Information processed</h2>
+          <p>
+            The Bot responds to Discord slash commands. When you use <code>/ask</code>, the
+            prompt you provide is received through Discord and sent to Groq, the AI provider,
+            to produce a response. Discord may also process account and interaction information
+            as described in its own privacy policy.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. How information is used</h2>
+          <p>
+            The prompt is used to request an AI-generated answer and return that answer to you
+            on Discord. The Bot’s current code does not save prompts or responses to an
+            application database. Technical errors may be written to the Bot host’s logs for
+            troubleshooting.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Third-party services</h2>
+          <p>
+            Discord provides the platform on which the Bot operates, and Groq processes prompts
+            submitted through <code>/ask</code>. These providers handle information under their
+            own terms and privacy practices. Their processing, retention, and safeguards are
+            outside the Bot’s control. Review the
+            <a href="https://discord.com/privacy">Discord Privacy Policy</a> and
+            <a href="https://groq.com/privacy-policy/">Groq Privacy Policy</a> for further information.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Retention and security</h2>
+          <p>
+            The Bot does not maintain a persistent application store for prompts or responses.
+            Limited technical logs may be retained by the environment that hosts the Bot, and
+            third-party providers may retain information under their own policies. No
+            internet-connected service can guarantee absolute security.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Your choices</h2>
+          <p>
+            You can choose not to use the Bot or not to submit a prompt. Do not include
+            passwords, financial details, health information, or other sensitive or confidential
+            information in a prompt. Requests concerning information held by Discord or Groq
+            should be directed to those providers.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Changes to this policy</h2>
+          <p>
+            This policy may be revised as the Bot or its data practices change. The effective
+            date above identifies the current version.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Contact</h2>
+          <p>
+            For questions about this policy or the Bot’s data handling, contact the project
+            maintainer through the
+            <a href="https://github.com/DelfinIbnKadafi/DelfinDiscordBot">project’s GitHub repository</a>.
+          </p>
+        </section>
+
+        <aside class="related">
+          Please also review the <a href="../terms-of-service/">Terms of Service</a> for the
+          conditions that apply to use of the Bot.
+        </aside>
+      </main>
+
+      <footer>
+        <a href="../terms-of-service/">Terms of Service</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://github.com/DelfinIbnKadafi/DelfinDiscordBot">Project repository</a>
+      </footer>
+    </div>
+  </body>
+</html>

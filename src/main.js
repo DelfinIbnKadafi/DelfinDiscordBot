@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const fs = require("node:fs");
 const path = require("node:path");
-const { Client, GatewayIntentBits, Collection } = require("discord.js");
+const { Client, GatewayIntentBits, Collection, Events, ActivityType } = require("discord.js");
 
 // Load every command file into the client's command collection.
 function loadCommands(client) {
@@ -57,6 +57,24 @@ async function startBot(token = process.env.DISCORD_TOKEN) {
   client.commands = new Collection();
   loadCommands(client);
   loadEvents(client);
+
+  client.once(Events.ClientReady, async readyClient => {
+    console.log(`Logged in as ${readyClient.user.tag}`);
+
+    try {
+      await readyClient.user.setPresence({
+        status: "online",
+        activities: [
+          {
+            name: "Seeing the world.",
+            type: ActivityType.Playing,
+          },
+        ],
+      });
+    } catch (error) {
+      console.error("Failed to set bot presence:", error);
+    }
+  });
 
   await client.login(token);
   return client;
