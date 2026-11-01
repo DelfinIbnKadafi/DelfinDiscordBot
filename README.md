@@ -29,3 +29,8 @@ You can contriube to this bot with creating a fork and create a pull request.
 ## License
 
 MIT License
+
+## Docs
+
+Privacy Policy : https://delfin.my.id/discord/bot/docs/privacy-policy/
+Terms of Service : https://delfin.my.id/discord/bot/docs/terms-of-service/
