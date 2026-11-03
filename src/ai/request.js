@@ -9,7 +9,7 @@ const groq = new Groq({
 });
 
 // config
-const config = JSON.parse(fs.readFileSync("./data.json", "utf8"));
+const config = JSON.parse(fs.readFileSync("config.json", "utf8"));
 
 // request
 async function request(prompt) {
