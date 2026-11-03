@@ -18,7 +18,8 @@ Delfin Discord Bot is a official Delfin's bot discord.
 1. Install dependencies with `npm install`.
 2. Copy `.env.example` to `.env` and set all environment variables.
 3. Deploy all commands before start the bot if it the first time.
-4. Start the bot with `npm start`.
+4. Edit `config.json` to edit bot configuration.
+5. Start the bot with `npm start`.
 
 The bot requests the Guilds gateway intent. Keep the bot token private and do not commit `.env`.
 

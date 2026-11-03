@@ -1,21 +1,24 @@
 // module
 require('dotenv').config();
 
+const fs = require("fs");
 const Groq = require("groq-sdk");
 
 const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY
 });
 
-const model = process.env.GROQ_MODEL;
+// config
+const config = JSON.parse(fs.readFileSync("./data.json", "utf8"));
 
+// request
 async function request(prompt) {
     const response = await groq.chat.completions.create({
-        model: model,
+        model: config.ai.model,
         messages: [
             {
                 role: "system",
-                content: "You are a helpful AI assistant."
+                content: config.ai.systemPrompt
             },
             {
                 role: "user",

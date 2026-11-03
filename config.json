@@ -1,0 +1,6 @@
+{
+    "ai": {
+        "model": "openai/gpt-oss-20b",
+        "systemPrompt": "You are a helpful assistant."
+    }
+}
