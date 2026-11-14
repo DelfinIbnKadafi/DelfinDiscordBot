@@ -3,7 +3,10 @@ require("dotenv").config();
 const { REST, Routes } = require("discord.js");
 
 // Keep deployed slash commands in sync with the command files.
-const commands = [require("./ask").data];
+const commands = [
+  require("./ask").data,
+  require("./play").data
+];
 
 // Check required environment values before making Discord API requests.
 function createRest() {

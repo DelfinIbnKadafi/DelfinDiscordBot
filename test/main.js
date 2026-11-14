@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const { EventEmitter } = require('node:events');
-const { Collection } = require('discord.js');
+const { Collection, MessageFlags } = require('discord.js');
 const { startBot, loadCommands, loadEvents } = require('../src/main');
 
 async function run() {
@@ -16,6 +16,49 @@ async function run() {
 
   assert.equal(client.commands.has('ask'), true);
   assert.equal(typeof require('../src/ai/request'), 'function');
+
+  let dmReply;
+  let deferred = false;
+  await client.commands.get('play').execute({
+    inGuild: () => false,
+    reply: async payload => {
+      dmReply = payload;
+    },
+    deferReply: async () => {
+      deferred = true;
+    },
+  });
+  assert.equal(dmReply.content, 'This command can only be used in a server.');
+  assert.equal(dmReply.flags, MessageFlags.Ephemeral);
+  assert.equal(deferred, false);
+
+  let fetchedGuildId;
+  let missingVoiceReply;
+  await client.commands.get('play').execute({
+    inGuild: () => true,
+    guild: null,
+    guildId: 'guild-id',
+    client: {
+      guilds: {
+        fetch: async guildId => {
+          fetchedGuildId = guildId;
+          return {
+            members: {
+              fetch: async () => ({ voice: { channel: null } }),
+            },
+          };
+        },
+      },
+    },
+    user: { id: 'user-id' },
+    deferReply: async () => {},
+    editReply: async content => {
+      missingVoiceReply = content;
+    },
+  });
+  assert.equal(fetchedGuildId, 'guild-id');
+  assert.equal(missingVoiceReply, 'You must be in a voice channel!');
+
   const [promptOption] = client.commands.get('ask').data.toJSON().options;
   assert.equal(promptOption.name, 'prompt');
   assert.equal(promptOption.description, 'The question you want to ask');
