@@ -30,6 +30,8 @@ module.exports = {
       return interaction.editReply("You must be in a voice channel!");
     }
 
+    const link = interaction.options.getString("youtube-link");
+
     // request
     const channel = member.voice.channel;
     const channelid = channel.id;
